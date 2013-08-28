@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flatwhite</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="/">FlatWhite Fortunes</a>
+      <ul class="nav">
+        <li class="active"><a href="/coffee_attempts">Submissions</a></li>
+        <li><%= link_to 'New Coffee attempt', new_coffee_attempt_path %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <%= yield %>
+</div>
+<footer>
+  <div class="container">
+    Kelly Kellective
+  </div>
+</footer>
+
+</body>
+</html>
