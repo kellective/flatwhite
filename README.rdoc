@@ -1,3 +1,5 @@
 == README
 
 A small silly project for me to learn more about Rails
+
+testing
