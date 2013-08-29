@@ -7,9 +7,10 @@ gem 'rails', '4.0.0'
 gem 'sqlite3'
 gem 'carrierwave'
 # Use SCSS for stylesheets
-gem 'sass-rails'
+gem 'sass-rails','~> 4.0.0'
 gem 'haml'
 gem 'foreigner'
+gem 'compass-rails'
 gem 'compass-h5bp'
 
 # Use Uglifier as compressor for JavaScript assets

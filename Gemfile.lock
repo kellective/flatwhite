@@ -46,6 +46,8 @@ GEM
       sass (~> 3.1)
     compass-h5bp (0.1.1)
       compass
+    compass-rails (1.0.3)
+      compass (>= 0.12.2, < 0.14)
     erubis (2.7.0)
     execjs (2.0.0)
     foreigner (1.4.2)
@@ -131,13 +133,14 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.0.0)
   compass-h5bp
+  compass-rails
   foreigner
   haml
   html5-rails
   jbuilder (~> 1.2)
   jquery-rails
   rails (= 4.0.0)
-  sass-rails
+  sass-rails (~> 4.0.0)
   sdoc
   sqlite3
   turbolinks

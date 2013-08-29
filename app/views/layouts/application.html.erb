@@ -1,33 +1,20 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Flatwhite</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<%= html_tag :class => "no-js" %>
+  <%= render "head" %>
 
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
+  <body class="<%= controller.controller_name %>">
+    <%= render "chromeframe" %>
+    <%= render "header" %>
+    <%= render "flashes" %>
+
     <div class="container">
-      <a class="brand" href="/">FlatWhite Fortunes</a>
-      <ul class="nav">
-        <li class="active"><a href="/coffee_attempts">Submissions</a></li>
-        <li><%= link_to 'New Coffee attempt', new_coffee_attempt_path %></li>
-      </ul>
+      <%= yield %>
     </div>
-  </div>
-</div>
+    <%= render "footer" %>
 
-<div class="container">
-  <%= yield %>
-</div>
-<footer>
-  <div class="container">
-    Kelly Kellective
-  </div>
-</footer>
-
-</body>
+    <%# Javascript at the bottom for fast page loading %>
+    <%= render "javascripts" %>
+  </body>
 </html>
+
+
