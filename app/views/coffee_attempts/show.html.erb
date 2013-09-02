@@ -1,17 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @coffee_attempt.name %>
-</p>
 
+<h2>
+<%= @coffee_attempt.name %>
+</h2>
 <p>
   <strong>Description:</strong>
   <%= @coffee_attempt.description %>
 </p>
 
 <p>
-  <strong>Picture:</strong>
   <%= image_tag(@coffee_attempt.picture_url) if @coffee_attempt.picture.present? %>
 </p>
 

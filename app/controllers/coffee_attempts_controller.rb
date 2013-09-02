@@ -25,7 +25,7 @@ class CoffeeAttemptsController < ApplicationController
   # POST /coffee_attempts.json
   def create
     @coffee_attempt = CoffeeAttempt.new(coffee_attempt_params)
-
+    
     respond_to do |format|
       if @coffee_attempt.save
         format.html { redirect_to @coffee_attempt, notice: 'Coffee attempt was successfully created.' }
