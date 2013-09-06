@@ -10,7 +10,7 @@ gem 'carrierwave'
 gem 'sass-rails','~> 4.0.0'
 gem 'haml'
 gem 'foreigner'
-gem 'compass-rails'
+gem "compass-rails", github: "milgner/compass-rails", ref: "1749c06f15dc4b058427e7969810457213647fb8"
 gem 'compass-h5bp'
 
 # Use Uglifier as compressor for JavaScript assets

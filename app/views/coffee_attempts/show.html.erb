@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Name</strong>
   <%= @coffee_attempt.name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Description</strong>
   <%= @coffee_attempt.description %>
 </p>
 
 <p>
-  <strong>Picture:</strong>
+  <strong>Picture</strong>
   <%= image_tag(@coffee_attempt.picture_url) if @coffee_attempt.picture.present? %>
 </p>
 
@@ -24,7 +24,6 @@
   </div>
 <% end %>
 <%= render 'comments/form' %>
-
 
 <%= link_to 'Edit', edit_coffee_attempt_path(@coffee_attempt) %> |
 <%= link_to 'Back', coffee_attempts_path %>
