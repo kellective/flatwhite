@@ -10,9 +10,9 @@ gem 'carrierwave'
 gem 'sass-rails','~> 4.0.0'
 gem 'haml'
 gem 'foreigner'
-gem "compass-rails", github: "milgner/compass-rails", ref: "1749c06f15dc4b058427e7969810457213647fb8"
+gem 'compass-rails', github: "Compass/compass-rails", branch: "rails4-hack"
 gem 'compass-h5bp'
-
+gem 'devise', '3.0.0.rc'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -37,6 +37,18 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+#change to the rails 4 strong_parameters way when I figure out how to
+#gem 'protected_attributes'
+##
+
+gem 'rspec-rails', :group => [:development, :test]
+gem "factory_girl_rails", :group => [:development, :test]
+gem "cucumber-rails", :group => :test, :require => false
+gem "capybara", :group => :test
+gem "database_cleaner", :group => :test
+gem "email_spec", :group => :test
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

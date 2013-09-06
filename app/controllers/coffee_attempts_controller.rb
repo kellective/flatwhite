@@ -25,7 +25,7 @@ class CoffeeAttemptsController < ApplicationController
   # POST /coffee_attempts.json
   def create
     @coffee_attempt = CoffeeAttempt.new(coffee_attempt_params)
-
+    
     respond_to do |format|
       if @coffee_attempt.save
         format.html { redirect_to @coffee_attempt, notice: 'Coffee attempt was successfully created.' }
@@ -40,8 +40,10 @@ class CoffeeAttemptsController < ApplicationController
   # PATCH/PUT /coffee_attempts/1
   # PATCH/PUT /coffee_attempts/1.json
   def update
+
     respond_to do |format|
       if @coffee_attempt.update(coffee_attempt_params)
+
         format.html { redirect_to @coffee_attempt, notice: 'Coffee attempt was successfully updated.' }
         format.json { head :no_content }
       else

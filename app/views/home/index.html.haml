@@ -1,0 +1,20 @@
+%h3 Latest
+
+
+%strong= @latest_attempt.name
+= @latest_attempt.description
+= image_tag(@latest_attempt.picture_url, :width=>"300") if @latest_attempt.picture.present?
+
+Posted by:
+
+
+
+
+%h3 Uploads
+
+%ul.nav
+
+	%li
+		%a{:href=>"/coffee_attempts"} Submissions
+	%li
+		=link_to 'New Coffee attempt', new_coffee_attempt_path
