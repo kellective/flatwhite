@@ -28,6 +28,8 @@
 @import 'layout';
 @import 'media_queries';
 
+body { background: #f8f8f8; color: #562B25; }
+
 nav {
 	ul li { 
 
@@ -35,4 +37,21 @@ nav {
 			text-align: center;
 		}
 	}
+	a { color: #874B43; }
+
 }
+
+.navbar { background: #fff; }
+
+.thumbnail img {
+	width: 100%;
+}
+
+.latest-view {
+	text-align: center;
+}
+
+.small-font { font-size: .75em; }
+
+h1 { text-align: center; }
+h1,h2,h3 { color: #E8400D; }

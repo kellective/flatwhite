@@ -1,28 +1,21 @@
 
 <p>Submit your coffee art</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Picture</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @coffee_attempts.each do |coffee_attempt| %>
-      <tr>
-        <td><%= coffee_attempt.name %></td>
-        <td><%= coffee_attempt.description %></td>
-        <td><%= link_to (image_tag(coffee_attempt.picture_url, :width => 100)), coffee_attempt if coffee_attempt.picture.present? %></td>
-        <td><%= link_to 'Show', coffee_attempt %></td>
-        <td><%= link_to 'Edit', edit_coffee_attempt_path(coffee_attempt) %></td>
-        <td><%= link_to 'Destroy', coffee_attempt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row">
+  <% @coffee_attempts.each do |coffee_attempt| %>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <%= link_to (image_tag(coffee_attempt.picture_url, :width => 200)), coffee_attempt if coffee_attempt.picture.present? %>
+        <div class="caption">
+          <h3><%= link_to coffee_attempt.name, coffee_attempt %></h3>
+          <p><%= coffee_attempt.description %></p>
+          <p class="small-font"><%= coffee_attempt.user.user_name %></p>
+          <% if coffee_attempt.user == current_user %>
+            <%= link_to 'Edit', edit_coffee_attempt_path(coffee_attempt) %>
+            <%= link_to 'Delete', coffee_attempt, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require third-party/bootstrap
 //= require h5bp
 //= require turbolinks
 

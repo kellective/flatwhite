@@ -1,5 +1,7 @@
 class CoffeeAttemptsController < ApplicationController
   before_action :set_coffee_attempt, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize_user!, :except => [:index, :show]
+
 
   # GET /coffee_attempts
   # GET /coffee_attempts.json
@@ -73,6 +75,6 @@ class CoffeeAttemptsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def coffee_attempt_params
-      params.require(:coffee_attempt).permit(:name, :description, :picture)
+      params.require(:coffee_attempt).permit(:name, :description, :picture).merge(user: current_user)
     end
 end

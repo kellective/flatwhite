@@ -5,8 +5,7 @@ class CoffeeAttempt < ActiveRecord::Base
 	
 	mount_uploader :picture, PhotoUploader
 
-	validates_presence_of :name, :description, :picture
-
+	validates_presence_of :name, :description, :picture, :user_id
 
 
 
