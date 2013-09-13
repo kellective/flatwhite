@@ -2,15 +2,16 @@
 
 	%p
 		=link_to 'Add yours', new_coffee_attempt_path
-	- unless @latest_attempt.nil? 
 
-		%h2 Latest
+	%h2 Latest
 
-		.thumbnail
-			= link_to (image_tag(@latest_attempt.picture_url, :width => 300)), @latest_attempt if @latest_attempt.picture.present?
+	.thumbnail
+		= link_to (image_tag(@latest_attempt.picture_url, :width => 300)), @latest_attempt if @latest_attempt.picture.present?
 
-		%h3=@latest_attempt.name
-		%p= @latest_attempt.description
-		%p.small-font 
-			Posted by:
-			= @latest_attempt.user.user_name
+	%h3=@latest_attempt.name
+	%p= @latest_attempt.description
+	%p.small-font 
+		Posted by:
+		= @latest_attempt.user.user_name
+
+

@@ -70,7 +70,6 @@ class CoffeeAttemptsController < ApplicationController
     def set_coffee_attempt
       @coffee_attempt = CoffeeAttempt.find(params[:id])
       @comment = @coffee_attempt.comments.build
-
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

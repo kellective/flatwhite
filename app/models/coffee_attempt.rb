@@ -30,5 +30,6 @@ class NilCoffeeAttempt
 	def name; nil ; end
 	def description; nil ; end
 	def picture; nil ; end
+
 end
 

@@ -1,4 +1,6 @@
-<%= form_for(@coffee_attempt, class: "form form-horizontal") do |f| %>
+<%= form_for @coffee_attempt, html: {class: "form form-horizontal"} do |f| %>
+
+
   <% if @coffee_attempt.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@coffee_attempt.errors.count, "error") %> prohibited this coffee_attempt from being saved:</h2>
@@ -12,15 +14,15 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :name %>
+    <%= f.label :name, :class=>"label" %>
     <%= f.text_field :name %>
   </div>
   <div class="form-group">
-    <%= f.label :description %>
+    <%= f.label :description, :class=>"label" %>
     <%= f.text_area :description %>
   </div>
   <div class="form-group">
-    <%= f.label :picture %>
+    <%= f.label :picture, :class=>"label" %>
     <%= f.file_field :picture %>
   </div>
   <div class="actions">
