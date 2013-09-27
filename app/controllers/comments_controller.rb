@@ -29,8 +29,8 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @comment }
+        format.html { redirect_to :back, notice: 'Comment was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @coffee_attempt }
       else
         format.html { render action: 'new' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
@@ -72,6 +72,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:body).merge(user: current_user)
+      params.require(:comment).permit(:body, :coffee_attempt_id).merge(user: current_user)
     end
 end

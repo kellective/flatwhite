@@ -11,25 +11,7 @@ class CoffeeAttempt < ActiveRecord::Base
 
 
   	def self.latest
-		attempt = CoffeeAttempt.last
-
-
-		if attempt == nil
-			NilCoffeeAttempt.new
-		else
-			attempt
-		end
+		CoffeeAttempt.last
   	end
-end
-
-
-
-class NilCoffeeAttempt
-	def nil?; true; end
-
-	def name; nil ; end
-	def description; nil ; end
-	def picture; nil ; end
-
 end
 

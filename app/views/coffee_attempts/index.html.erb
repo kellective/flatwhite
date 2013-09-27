@@ -9,7 +9,9 @@
         <div class="caption">
           <h3><%= link_to coffee_attempt.name, coffee_attempt %></h3>
           <p><%= coffee_attempt.description %></p>
-          <p class="small-font"><%#= coffee_attempt.user.user_name %></p>
+          <p class="small-font">
+            <%= coffee_attempt.user.user_name %>
+          </p>
           <% if coffee_attempt.user == current_user %>
             <%= link_to 'Edit', edit_coffee_attempt_path(coffee_attempt) %>
             <%= link_to 'Delete', coffee_attempt, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -18,4 +20,5 @@
       </div>
     </div>
   <% end %>
+
 </div>

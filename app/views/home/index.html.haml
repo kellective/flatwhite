@@ -3,15 +3,20 @@
 	%p
 		=link_to 'Add yours', new_coffee_attempt_path
 
-	%h2 Latest
+	-if @latest_attempt.present?
+	
+		%h2 Latest
 
-	.thumbnail
-		= link_to (image_tag(@latest_attempt.picture_url, :width => 300)), @latest_attempt if @latest_attempt.picture.present?
-
-	%h3=@latest_attempt.name
-	%p= @latest_attempt.description
-	%p.small-font 
-		Posted by:
-		= @latest_attempt.user.user_name
+		.thumbnail
+			= link_to (image_tag(@latest_attempt.picture_url, :width => 300)), @latest_attempt if @latest_attempt.picture.present?
 
 
+		%h3=@latest_attempt.name
+		%p= @latest_attempt.description
+		%p.small-font 
+			Posted by:
+			= @latest_attempt.user.user_name
+
+
+%h4 Inspiration
+<iframe src="//player.vimeo.com/video/66343904?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/66343904">VCR StreetSmarts #14: Latte Art</a> from <a href="http://vimeo.com/vervecoffee">Verve Coffee Roasters</a> on <a href="https://vimeo.com">Vimeo</a>.</p>

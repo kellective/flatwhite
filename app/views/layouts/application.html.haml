@@ -5,13 +5,10 @@
   = render "chromeframe"
   = render "header"
   
-  - [:error, :alert, :notice].each do |type|
-    - if flash[type]
-      .flash{:class => "alert alert-message #{type}", :'data-alert' => 'true', }
-        %a.close{href: '#'} &times;
-        =flash[type]
 
   .container
+    =render :partial => "application/flash_messages", :locals => {:flash => flash}
+
     %h1 FlatWhite Fortunes
     = yield
   = render "footer"
